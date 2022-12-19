@@ -17,14 +17,14 @@ void	flags(int ac, char **av)
 	int		fd;
 	char	*temp;
 
-	temp = ft_strjoin("./maps/", av[1]);
-	fd = open(temp, O_RDONLY);
-	free(temp);
 	if (ac != 2)
 	{
 		write(1, "0.1 Error", 9);
 		exit(1);
 	}
+	temp = ft_strjoin("./maps/", av[1]);
+	fd = open(temp, O_RDONLY);
+	free(temp);
 	if (fd == -1)
 	{
 		write(1, "0.2 Error", 9);
